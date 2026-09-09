@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Endalk Eyayu Design (EED) | Ethiopian Product Hub</title>
+
+  <!-- Facebook Open Graph Meta Tags -->
+  <meta property="og:url" content="https://yourdomain.com/index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Endalk Eyayu Design (EED) Catalog">
+  <meta property="og:description" content="Explore custom wood and metal craftsmanship, furniture, and engineering designs directly from Ethiopian producers.">
+  <meta property="og:image" content="https://yourdomain.com/logo.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style id="custom-theme-styles">
+    :root {
+      --bg-dark: #090d16;
+      --card-bg: #131c2e;
+      --accent-blue: #3b82f6;
+      --accent-green: #10b981;
+      --accent-gold: #f59e0b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: #1e293b;
+      --main-font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+      --main-font-size: 16px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--main-font-family);
+      font-size: var(--main-font-size);
+      line-height: 1.6;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Utility Bar */
+    .utility-bar {
+      background: linear-gradient(90deg, #020617 0%, #0f172a 100%);
+      padding: 10px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-color);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .utility-bar a { color: var(--accent-green); text-decoration: none; font-weight: 600; transition: color 0.2s; }
+    .utility-bar a:hover { text-decoration: underline; }
+    .utility-contacts { display: flex; gap: 24px; flex-wrap: wrap; }
+    .utility-contacts i { margin-right: 6px; color: var(--accent-blue); }
+
+    /* Navigation Bar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 6%;
+      background-color: rgba(19, 28, 46, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo-container { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--text-main); cursor: pointer; }
+    .brand-logo-img { height: 46px; width: auto; object-fit: contain; border-radius: 8px; background: #fff; padding: 3px; box-shadow: 0 0 10px rgba(255,255,255,0.1); }
+    .logo-text { font-size: 22px; font-weight: 800; tracking: -0.5px; background: linear-gradient(45deg, #fff, var(--accent-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-buttons { display: flex; gap: 12px; align-items: center; }
+
+    /* Layout */
+    .page-layout { display: flex; flex: 1; }
+
+    /* Sidebar Styles */
+    .sidebar {
+      width: 300px;
+      background-color: var(--card-bg);
+      border-right: 1px solid var(--border-color);
+      padding: 28px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      flex-shrink: 0;
+    }
+
+    .sidebar-block {
+      background: rgba(2, 6, 23, 0.4);
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .sidebar-title {
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      color: var(--accent-blue);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .setting-group { margin-bottom: 16px; }
+    .setting-group:last-child { margin-bottom: 0; }
+    .setting-group label { display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; }
+    .setting-group select, .setting-group input {
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background-color: #090d16;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .setting-group select:focus, .setting-group input:focus { border-color: var(--accent-blue); }
+
+    /* Main Workspace */
+    .main-workspace { flex: 1; padding: 36px 5%; }
+
+    /* Hero Mottos Banner */
+    .amharic-mottos {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80') center/cover;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 40px 24px;
+      text-align: center;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+    .amharic-mottos::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(9, 13, 22, 0.65);
+      z-index: 1;
+    }
+    .amharic-mottos-content { position: relative; z-index: 2; }
+    .amharic-mottos h2 { font-size: 32px; color: var(--accent-gold); margin-bottom: 10px; font-weight: 800; letter-spacing: 0.5px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+    .amharic-mottos p { font-size: 20px; font-weight: 600; margin-bottom: 6px; }
+
+    /* Buttons */
+    .btn {
+      padding: 11px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); }
+    .btn-whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; }
+    .btn-blue { background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: #fff; }
+    .btn-fb { background: linear-gradient(135deg, #1877f2, #0d52b1); color: #fff; }
+    .btn-admin { background-color: var(--border-color); color: var(--text-main); border: 1px solid rgba(255,255,255,0.1); }
+    .btn-danger { background: linear-gradient(135deg, #ef4444, #b91c1c); color: #fff; }
+
+    /* Product Cards & Grid */
+    .catalog-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--border-color); }
+    .catalog-title { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .product-card {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    .product-card:hover { transform: translateY(-6px); border-color: rgba(59, 130, 246, 0.4); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4); }
+
+    .product-img-wrapper { position: relative; overflow: hidden; height: 210px; background-color: #020617; }
+    .product-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .product-card:hover .product-img { transform: scale(1.08); }
+
+    .badge-tag {
+      position: absolute;
+      top: 12px; left: 12px;
+      font-size: 11px; font-weight: 700;
+      padding: 4px 10px; border-radius: 20px;
+      background: rgba(9, 13, 22, 0.85);
+      color: var(--accent-blue);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      backdrop-filter: blur(4px);
+    }
+
+    .product-details { padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .product-title { font-size: 18px; font-weight: 700; margin-bottom: 4px; color: #fff; }
+    .product-code { font-size: 12px; color: var(--accent-blue); font-weight: 700; margin-bottom: 8px; letter-spacing: 0.5px; }
+    .product-price { font-size: 22px; color: var(--accent-green); font-weight: 800; margin-bottom: 12px; }
+    .product-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5; }
+    
+    .product-meta { background: rgba(0,0,0,0.2); padding: 10px 12px; border-radius: 8px; margin-bottom: 16px; font-size: 12px; color: var(--text-muted); border: 1px solid rgba(255,255,255,0.03); }
+    .product-meta p { display: flex; justify-content: space-between; margin-bottom: 4px; }
+    .product-meta p:last-child { margin-bottom: 0; }
+
+    /* Admin Section */
+    .admin-section { display: none; padding: 40px 6%; width: 100%; }
+    .admin-top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color); }
+    .admin-card { background-color: var(--card-bg); padding: 28px; border-radius: 16px; border: 1px solid var(--border-color); margin-bottom: 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .admin-card h2 { margin-bottom: 16px; font-size: 20px; font-weight: 700; }
+
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; margin-bottom: 8px; font-size: 13px; font-weight: 600; color: var(--text-muted); }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background-color: #090d16; color: #fff; outline: none; transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent-blue); }
+
+    .admin-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+    .admin-table th, .admin-table td { border: 1px solid var(--border-color); padding: 12px 16px; text-align: left; font-size: 14px; }
+    .admin-table th { background-color: #020617; color: var(--accent-blue); text-transform: uppercase; font-size: 12px; letter-spacing: 0.5px; }
+
+    /* Modal */
+    .modal {
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(6px); z-index: 2000; justify-content: center; align-items: center;
+    }
+    .modal-content { background-color: var(--card-bg); padding: 36px; border-radius: 16px; width: 100%; max-width: 420px; border: 1px solid var(--border-color); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+
+    /* Footer Styling */
+    footer {
+      background: linear-gradient(180deg, #020617 0%, #000000 100%);
+      border-top: 1px solid var(--border-color);
+      padding: 48px 6% 36px;
+      margin-top: auto;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .footer-info h4 { font-size: 20px; color: #fff; margin-bottom: 8px; font-weight: 800; background: linear-gradient(45deg, #fff, var(--accent-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .footer-info p { font-size: 14px; color: var(--text-muted); max-width: 400px; }
+
+    .footer-actions-wrapper { display: flex; gap: 40px; flex-wrap: wrap; }
+
+    .social-links-wrapper h4, .share-wrapper h4 { font-size: 15px; color: #fff; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .social-links, .share-links { display: flex; gap: 12px; }
+
+    .social-icon, .share-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background-color: var(--card-bg);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 20px;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .social-icon.facebook:hover, .share-icon.facebook:hover { background-color: #1877F2; border-color: #1877F2; transform: translateY(-4px); box-shadow: 0 6px 16px rgba(24, 119, 242, 0.3); }
+    .social-icon.youtube:hover { background-color: #FF0000; border-color: #FF0000; transform: translateY(-4px); box-shadow: 0 6px 16px rgba(255, 0, 0, 0.3); }
+    .social-icon.tiktok:hover { background-color: #000000; border-color: #25F4EE; transform: translateY(-4px); color: #25F4EE; box-shadow: 0 6px 16px rgba(37, 244, 238, 0.3); }
+    .social-icon.instagram:hover { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); border-color: #dc2743; transform: translateY(-4px); box-shadow: 0 6px 16px rgba(220, 39, 67, 0.3); }
+
+    .share-icon.whatsapp:hover { background-color: #25D366; border-color: #25D366; transform: translateY(-4px); box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3); }
+    .share-icon.telegram:hover { background-color: #24A1DE; border-color: #24A1DE; transform: translateY(-4px); box-shadow: 0 6px 16px rgba(36, 161, 222, 0.3); }
+    .share-icon.copy:hover { background-color: var(--accent-gold); border-color: var(--accent-gold); transform: translateY(-4px); box-shadow: 0 6px 16px rgba(245, 158, 11, 0.3); }
+
+    @media (max-width: 850px) {
+      .page-layout { flex-direction: column; }
+      .sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--border-color); }
+      .footer-content { flex-direction: column; text-align: center; align-items: center; }
+      .footer-info p { max-width: 100%; }
+      .footer-actions-wrapper { justify-content: center; }
+      .social-links-wrapper h4, .share-wrapper h4 { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="utility-bar">
+    <span id="txt-utility-title"><i class="fa-solid fa-pen-nib"></i> Gurba Digital Services</span>
+    <div class="utility-contacts">
+      <span><i class="fa-solid fa-envelope"></i> <a href="mailto:endalkeyayu@gmail.com">endalkeyayu@gmail.com</a></span>
+      <span><i class="fa-solid fa-phone"></i> <a href="tel:+251934853483">+251 934 853 483</a></span>
+    </div>
+  </div>
+
+  <nav>
+    <div class="logo-container" onclick="showMainPage()">
+      <img src="endalk.jpg" alt="EED Logo" class="brand-logo-img">
+      <span class="logo-text">Gurba Digital </span>
+    </div>
+    <div class="nav-buttons">
+      <a href="https://wa.me/251934853483" class="btn btn-whatsapp" target="_blank" id="btn-chat-nav"><i class="fa-brands fa-whatsapp"></i> Chat Now</a>
+      <button class="btn btn-admin" onclick="openLoginModal()" id="btn-admin-nav"><i class="fa-solid fa-user-lock"></i> Admin</button>
+    </div>
+  </nav>
+
+  <div class="page-layout">
+    
+    <aside class="sidebar" id="main-sidebar">
+      
+      <div class="sidebar-block">
+        <div class="sidebar-title"><i class="fa-solid fa-filter"></i> <span id="txt-categories">Select Category</span></div>
+        <div class="setting-group">
+          <!-- "All Categories" option removed. Default set to Engineering -->
+          <select id="category-select" onchange="filterCategory(this.value)">
+            <option value="Engineering" id="opt-cat-eng" selected>Engineering</option>
+            <option value="Metal Work" id="opt-cat-metal">Metal Work</option>
+            <option value="Furniture" id="opt-cat-furn">Furniture</option>
+            <option value="Leather" id="opt-cat-leather">Leather</option>
+            <option value="Garment" id="opt-cat-garment">Garment</option>
+            <option value="Chemical Products" id="opt-cat-chem">Chemical Products</option>
+            <option value="Construction Inputs" id="opt-cat-const">Construction Inputs</option>
+            <option value="Agro-Processing" id="opt-cat-agro">Agro-Processing</option>
+            <option value="Cosmetics" id="opt-cat-cosm">Cosmetics</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="sidebar-title"><i class="fa-solid fa-sliders"></i> <span id="txt-settings">Page Settings</span></div>
+        
+        <div class="setting-group">
+          <label id="lbl-lang">Language</label>
+          <select id="setting-language" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="am">Amharic (አማርኛ)</option>
+            <option value="om">Afaan Oromoo</option>
+          </select>
+        </div>
+
+        <div class="setting-group">
+          <label id="lbl-theme">Theme Color</label>
+          <select id="setting-bg" onchange="applyTheme()">
+            <option value="blue-dark" id="opt-theme-dark">Blue Dark (Default)</option>
+            <option value="white" id="opt-theme-white">White</option>
+            <option value="light-orange" id="opt-theme-orange">Light Orange</option>
+            <option value="garden-green" id="opt-theme-green">Garden Green</option>
+            <option value="rose" id="opt-theme-rose">Rose</option>
+          </select>
+        </div>
+
+        <div class="setting-group">
+          <label id="lbl-font-style">Font Style</label>
+          <select id="setting-font-style" onchange="applyTheme()">
+            <option value="sans-serif">Sans-Serif</option>
+            <option value="serif">Serif</option>
+            <option value="monospace">Monospace</option>
+          </select>
+        </div>
+
+        <div class="setting-group">
+          <label id="lbl-font-color">Font Color</label>
+          <input type="color" id="setting-font-color" value="#f8fafc" onchange="applyTheme()">
+        </div>
+
+        <div class="setting-group">
+          <label id="lbl-font-size">Font Size</label>
+          <select id="setting-font-size" onchange="applyTheme()">
+            <option value="14px" id="opt-font-sm">Small</option>
+            <option value="16px" id="opt-font-md" selected>Medium</option>
+            <option value="18px" id="opt-font-lg">Large</option>
+          </select>
+        </div>
+      </div>
+
+    </aside>
+
+    <main class="main-workspace" id="main-content">
+      
+      <div class="amharic-mottos">
+        <div class="amharic-mottos-content">
+          <h2 id="motto-1">ኢትዮጵያ ታምርት እኛም እንሸምት ።</h2>
+          <p id="motto-2">በሐገራችን ምርት እንኩራ ።</p>
+          <p style="color: #60a5fa;" id="motto-3">ቀጥታ ከአምራቹ ይግዙ ።</p>
+        </div>
+      </div>
+
+      <div class="catalog-header">
+        <h2 class="catalog-title" id="catalog-title">Engineering</h2>
+      </div>
+
+      <div class="product-grid" id="product-grid"></div>
+
+    </main>
+
+    <section class="admin-section" id="admin-dashboard">
+      
+      <div class="admin-top-bar">
+        <h2 id="txt-admin-title"><i class="fa-solid fa-sliders"></i> Admin Control Panel</h2>
+        <div style="display: flex; gap: 12px;">
+          <button class="btn btn-blue" onclick="showMainPage()" id="btn-back-home"><i class="fa-solid fa-house"></i> Back to Home</button>
+          <button class="btn btn-danger" onclick="showMainPage()" id="btn-exit-admin"><i class="fa-solid fa-right-from-bracket"></i> Exit Admin</button>
+        </div>
+      </div>
+
+      <!-- Account Security Settings -->
+      <div class="admin-card" style="border-color: rgba(245, 158, 11, 0.4);">
+        <h2 style="color: var(--accent-gold);" id="txt-sec-title"><i class="fa-solid fa-user-shield"></i> Admin Account Security Settings</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 14px;" id="txt-sec-desc">
+          Change your administrative login credentials here. Next time you log in, use the updated details.
+        </p>
+        <form onsubmit="updateAdminCredentials(event)">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+            <div class="form-group">
+              <label id="lbl-new-user">New Admin Username</label>
+              <input type="text" id="admin-new-user" required placeholder="Enter new username">
+            </div>
+            <div class="form-group">
+              <label id="lbl-new-pass">New Admin Password</label>
+              <input type="password" id="admin-new-pass" required placeholder="Enter new password">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-blue" id="btn-update-cred" style="margin-top: 10px;"><i class="fa-solid fa-key"></i> Update Credentials</button>
+        </form>
+      </div>
+
+      <!-- Facebook Direct Publisher -->
+      <div class="admin-card">
+        <h2 id="txt-fb-title"><i class="fa-brands fa-facebook"></i> Facebook Page Direct Publisher</h2>
+        <p style="color: var(--text-muted); margin-bottom: 16px; font-size: 14px;" id="txt-fb-desc">
+          Publish a Web Page Link Card (with site preview image, title, and website URL) directly to your official Facebook Page wall.
+        </p>
+        <button class="btn btn-fb" onclick="publishWebPageLinkCard()" id="btn-publish-fb">
+          <i class="fa-brands fa-facebook"></i> Publish Web Page Link Card Now
+        </button>
+      </div>
+
+      <!-- Add / Edit Product -->
+      <div class="admin-card">
+        <h2 id="txt-add-prod-title"><i class="fa-solid fa-plus-circle"></i> Add / Edit Product</h2>
+        <form onsubmit="saveProduct(event)">
+          <input type="hidden" id="edit-prod-id">
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+            <div class="form-group">
+              <label id="lbl-prod-name">Product Name</label>
+              <input type="text" id="prod-title" required placeholder="e.g. Executive Wooden Desk">
+            </div>
+
+            <div class="form-group">
+              <label id="lbl-prod-code">Product Code</label>
+              <input type="text" id="prod-code" required placeholder="e.g. EED-FUR-001">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label id="lbl-prod-desc">Product Description</label>
+            <textarea id="prod-desc" rows="3" placeholder="Enter detailed specifications, materials, etc."></textarea>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+            <div class="form-group">
+              <label id="lbl-prod-cat">Category</label>
+              <select id="prod-category" required>
+                <option value="Engineering">Engineering</option>
+                <option value="Metal Work">Metal Work</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Leather">Leather</option>
+                <option value="Garment">Garment</option>
+                <option value="Chemical Products">Chemical Products</option>
+                <option value="Construction Inputs">Construction Inputs</option>
+                <option value="Agro-Processing">Agro-Processing</option>
+                <option value="Cosmetics">Cosmetics</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label id="lbl-prod-price">Price</label>
+              <input type="text" id="prod-price" required placeholder="e.g. 25,000 ETB">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+            <div class="form-group">
+              <label id="lbl-prod-deliv">Delivery System</label>
+              <select id="prod-delivery" required>
+                <option value="By Customers" id="opt-deliv-cust">By Customers</option>
+                <option value="By Supplier" id="opt-deliv-supp">By Supplier</option>
+                <option value="By Negotiations" id="opt-deliv-nego">By Negotiations</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label id="lbl-prod-status">Product Status</label>
+              <select id="prod-status" required>
+                <option value="By Order" id="opt-stat-order">By Order</option>
+                <option value="On Showroom" id="opt-stat-show">On Showroom</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label id="lbl-upload-img">Upload Image from Local Device</label>
+            <input type="file" id="prod-img-file" accept="image/*">
+          </div>
+
+          <div style="display: flex; gap: 12px; margin-top: 10px;">
+            <button type="submit" class="btn btn-whatsapp" id="btn-save-prod"><i class="fa-solid fa-floppy-disk"></i> Save Product</button>
+            <button type="button" class="btn btn-admin" onclick="clearAdminForm()" id="btn-reset-form">Reset Form</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Manage Inventory -->
+      <div class="admin-card">
+        <h2 id="txt-inv-title"><i class="fa-solid fa-list-check"></i> Manage Inventory</h2>
+        <div style="overflow-x: auto;">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th id="th-img">Image</th>
+                <th id="th-code">Code</th>
+                <th id="th-title">Title</th>
+                <th id="th-cat">Category</th>
+                <th id="th-price">Price</th>
+                <th id="th-deliv">Delivery</th>
+                <th id="th-stat">Status</th>
+                <th id="th-act">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="admin-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- Footer with Social Follow and Web Link Sharing -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <h4>Gurba Digital </h4>
+        <p id="txt-footer-copy">&copy; 2026 Endalk Eyayu Design. All rights reserved. Crafting Ethiopian products with precision.</p>
+      </div>
+      
+      <div class="footer-actions-wrapper">
+        <!-- Follow Us with User's Social Links -->
+        <div class="social-links-wrapper">
+          <h4 id="txt-follow-us">Follow Us</h4>
+          <div class="social-links">
+            <a href="https://tiktok.com/@e2724e" target="_blank" class="social-icon tiktok" title="TikTok">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="https://www.youtube.com/@EndlkEyayu" target="_blank" class="social-icon youtube" title="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://www.facebook.com/enduthegreat" target="_blank" class="social-icon facebook" title="Facebook">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/endalkeyayu?igsh=MWJidzBoNDRlajk3cw==" target="_blank" class="social-icon instagram" title="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Share Website Section -->
+        <div class="share-wrapper">
+          <h4 id="txt-share-us">Share Web Link</h4>
+          <div class="share-links">
+            <a onclick="shareSite('whatsapp')" class="share-icon whatsapp" title="Share via WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a onclick="shareSite('telegram')" class="share-icon telegram" title="Share via Telegram">
+              <i class="fa-brands fa-telegram"></i>
+            </a>
+            <a onclick="shareSite('facebook')" class="share-icon facebook" title="Share via Facebook">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <button onclick="copySiteLink()" class="share-icon copy" title="Copy Website Link">
+              <i class="fa-solid fa-link"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <h3 style="margin-bottom: 20px; text-align: center; font-size: 20px;" id="txt-modal-login"><i class="fa-solid fa-lock"></i> Admin Access</h3>
+      <form onsubmit="validateLogin(event)">
+        <div class="form-group">
+          <label id="lbl-login-user">Username</label>
+          <input type="text" id="login-user" placeholder="Enter username" required>
+        </div>
+        <div class="form-group">
+          <label id="lbl-login-pass">Password</label>
+          <input type="password" id="login-pass" placeholder="Enter password" required>
+        </div>
+        <div style="display: flex; gap: 12px; margin-top: 20px;">
+          <button type="submit" class="btn btn-blue" style="flex:1; justify-content: center;" id="btn-login-submit">Login</button>
+          <button type="button" class="btn btn-admin" onclick="closeLoginModal()" style="flex:1; justify-content: center;" id="btn-login-cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let products = [];
+    // Default filter set to Engineering
+    let currentFilter = 'Engineering';
+    let currentLang = 'en';
+
+    let adminUser = localStorage.getItem('eed_admin_user') || 'admin';
+    let adminPass = localStorage.getItem('eed_admin_pass') || 'admin123';
+
+    // Comprehensive Dictionary for English, Amharic, and Afaan Oromoo
+    const i18n = {
+      en: {
+        utilityTitle: "Endalk Eyayu Design (EED) Services",
+        chatNow: "Chat Now",
+        admin: "Admin",
+        selectCategory: "Select Category",
+        pageSettings: "Page Settings",
+        language: "Language",
+        themeColor: "Theme Color",
+        fontStyle: "Font Style",
+        fontColor: "Font Color",
+        fontSize: "Font Size",
+        motto1: "ኢትዮጵያ ታምርት እኛም እንሸምት ።",
+        motto2: "በሐገራችን ምርት እንኩራ ።",
+        motto3: "ቀጥታ ከአምራቹ ይግዙ ።",
+        adminTitle: "Admin Control Panel",
+        backToHome: "Back to Home",
+        exitAdmin: "Exit Admin",
+        secTitle: "Admin Account Security Settings",
+        secDesc: "Change your administrative login credentials here. Next time you log in, use the updated details.",
+        newUser: "New Admin Username",
+        newPass: "New Admin Password",
+        updateCred: "Update Credentials",
+        fbTitle: "Facebook Page Direct Publisher",
+        fbDesc: "Publish a Web Page Link Card (with site preview image, title, and website URL) directly to your official Facebook Page wall.",
+        publishFb: "Publish Web Page Link Card Now",
+        addProdTitle: "Add / Edit Product",
+        prodName: "Product Name",
+        prodCode: "Product Code",
+        prodDesc: "Product Description",
+        category: "Category",
+        price: "Price",
+        deliverySys: "Delivery System",
+        prodStatus: "Product Status",
+        uploadImg: "Upload Image from Local Device",
+        saveProd: "Save Product",
+        resetForm: "Reset Form",
+        manageInv: "Manage Inventory",
+        thImg: "Image", thCode: "Code", thTitle: "Title", thCat: "Category", thPrice: "Price", thDeliv: "Delivery", thStat: "Status", thAct: "Actions",
+        adminAccess: "Admin Access", loginUser: "Username", loginPass: "Password", loginSubmit: "Login", cancel: "Cancel",
+        catEng: "Engineering", catMetal: "Metal Work", catFurn: "Furniture", catLeather: "Leather", catGarment: "Garment", catChem: "Chemical Products", catConst: "Construction Inputs", catAgro: "Agro-Processing", catCosm: "Cosmetics",
+        delivCust: "By Customers", delivSupp: "By Supplier", delivNego: "By Negotiations", statOrder: "By Order", statShow: "On Showroom",
+        orderDirect: "Order Direct", codeLbl: "Code", statusLbl: "Status", deliveryLbl: "Delivery", noDesc: "No detailed description available.",
+        followUs: "Follow Us", shareUs: "Share Web Link", footerCopy: "© 2026 Endalk Eyayu Design. All rights reserved. Crafting Ethiopian products with precision."
+      },
+      am: {
+        utilityTitle: "እንዳልክ እያዩ ዲዛይን (EED) አገልግሎቶች",
+        chatNow: "አሁኑኑ ያውሩ",
+        admin: "አስተዳዳሪ",
+        selectCategory: "ምድብ ይምረጡ",
+        pageSettings: "የገጽ ቅንብሮች",
+        language: "ቋንቋ",
+        themeColor: "የገጽታ ቀለም",
+        fontStyle: "የፊደል ቅርጽ",
+        fontColor: "የፊደል ቀለም",
+        fontSize: "የፊደል መጠን",
+        motto1: "ኢትዮጵያ ታምርት እኛም እንሸምት ።",
+        motto2: "በሐገራችን ምርት እንኩራ ።",
+        motto3: "ቀጥታ ከአምራቹ ይግዙ ።",
+        adminTitle: "የአስተዳዳሪ መቆጣጠሪያ ሰሌዳ",
+        backToHome: "ወደ முதன்மை ገጽ",
+        exitAdmin: "ከአስተዳዳሪ ውጣ",
+        secTitle: "የአስተዳዳሪ መለያ ደህንነት ቅንብሮች",
+        secDesc: "እዚህ የአስተዳዳሪ መግቢያ ምስጢራዊ መረጃዎን ይቀይሩ። በሚቀጥለው ጊዜ ሲገቡ አዲሱን መረጃ ይጠቀሙ።",
+        newUser: "አዲስ የተጠቃሚ ስም",
+        newPass: "አዲስ የይለፍ ቃል",
+        updateCred: "መረጃውን አዘምን",
+        fbTitle: "የፌስቡክ ገጽ በቀጥታ ማተሚያ",
+        fbDesc: "የድር ገጽ አገናኝ ካርድ በቀጥታ ወደ ኦፊሴላዊ የፌስቡክ ገጽዎ ግድግዳ ላይ ያትሙ።",
+        publishFb: "አሁን ወደ ፌስቡክ ለጥፍ",
+        addProdTitle: "ምርት አክል / አርትዕ",
+        prodName: "የምርት ስም",
+        prodCode: "የምርት ኮድ",
+        prodDesc: "የምርት ማብራሪያ",
+        category: "ምድብ",
+        price: "ዋጋ",
+        deliverySys: "የማድረሻ ስርዓት",
+        prodStatus: "የምርት ሁኔታ",
+        uploadImg: "ምስል ከስልክዎ ይጫኑ",
+        saveProd: "ምርቱን መዝግብ",
+        resetForm: "ቅጹን አጽዳ",
+        manageInv: "ምርቶችን ያስተዳድሩ",
+        thImg: "ምስል", thCode: "ኮድ", thTitle: "ርዕስ", thCat: "ምድብ", thPrice: "ዋጋ", thDeliv: "ማድረሻ", thStat: "ሁኔታ", thAct: "እርምጃዎች",
+        adminAccess: "የአስተዳዳሪ መግቢያ", loginUser: "የተጠቃሚ ስም", loginPass: "የይለፍ ቃል", loginSubmit: "ግበaw", cancel: "ሰርዝ",
+        catEng: "ኢንጂነሪንግ", catMetal: "ብረታ ብረት", catFurn: "ቤትና ቢሮ ዕቃዎች", catLeather: "ቆዳና የቆዳ ውጤቶች", catGarment: "ጨርቃጨርቅ", catChem: "ኬሚካል ውጤቶች", catConst: "ኮንስትራክሽን ግብአት", catAgro: "አግሮ ፕሮሰሲንግ", catCosm: "ኮስሞቲክስ",
+        delivCust: "በደንበኛው", delivSupp: "በአቅራቢው", delivNego: "በስምምነት", statOrder: "በትእዛዝ", statShow: "በሾውሩም",
+        orderDirect: "በቀጥታ ይዘዙ", codeLbl: "ኮድ", statusLbl: "ሁኔታ", deliveryLbl: "ማድረሻ", noDesc: "ዝርዝር ማብራሪያ አልተካተተም።",
+        followUs: "ይከተሉን", shareUs: "ድረ-ገጹን ያጋሩ", footerCopy: "© 2026 እንዳልክ እያዩ ዲዛይን። መብቱ በሕግ የተጠበቀ ነው። የኢትዮጵያ ምርቶችን በጥራት እናመርታለን።"
+      },
+      om: {
+        utilityTitle: "Tajaajila Endalk Eyayu Design (EED)",
+        chatNow: "Amma Haasa'aa",
+        admin: "Gulaalaa",
+        selectCategory: "Gosa Filadhu",
+        pageSettings: "Qindaa’ina Fuulaa",
+        language: "Afaan",
+        themeColor: "Halluu Fuulaa",
+        fontStyle: "Haala Qubee",
+        fontColor: "Halluu Qubee",
+        fontSize: "Guddictina Qubee",
+        motto1: "Ityoophiyaan Haa Oomishtu Nu'is Haa Bitannu.",
+        motto2: "Oomisha Biyya Keessaan Haa Boonnu.",
+        motto3: "Kallattiin Oomishtarraa Bitaa.",
+        adminTitle: "Gulaalaa To'annoo",
+        backToHome: "Gara Fuula Duraatti",
+        exitAdmin: "Gulaalaarraa Ba'i",
+        secTitle: "Qindaa'ina Nageenya Eenyummaa Gulaalaa",
+        secDesc: "Eenyummaa seensa gulaalaa keessanii asitti jijjiiraa. Yeroo itti aanu yeroo seentan deetaa haaraatti fayyadamaa.",
+        newUser: "Maqaa Fayyadamaa Haaraa",
+        newPass: "Jecha Darbi Haaraa",
+        updateCred: "Deetaa Haaramsi",
+        fbTitle: "Kallattiin Fuula Facebook irratti Maxxansuu",
+        fbDesc: "Waraqaa geessituu fuula web kallattiin fuula Facebook keessan irratti maxxansaa.",
+        publishFb: "Amma Facebook irratti Maxxansi",
+        addProdTitle: "Oomisha Dabali / Gulaali",
+        prodName: "Maqaa Oomishaa",
+        prodCode: "Koodii Oomishaa",
+        prodDesc: "Ibsa Oomishaa",
+        category: "Gosa",
+        price: "Gatiidhaan",
+        deliverySys: "Sirna Geejjibaa",
+        prodStatus: "Haala Oomishaa",
+        uploadImg: "Suuraa Fe'aa",
+        saveProd: "Oomisha Olka'i",
+        resetForm: "Qulqulleessi",
+        manageInv: "Oomisha To'adhu",
+        thImg: "Suuraa", thCode: "Koodii", thTitle: "Mata Duree", thCat: "Gosa", thPrice: "Gatii", thDeliv: "Geejjiba", thStat: "Haala", thAct: "Tarkaanfii",
+        adminAccess: "Seensa Gulaalaa", loginUser: "Maqaa Fayyadamaa", loginPass: "Jecha Darbi", loginSubmit: "Seeni", cancel: "Dhiisi",
+        catEng: "Injinaringii", catMetal: "Sibbilaa", catFurn: "Meqeesaa", catLeather: "Gogaa", catGarment: "Uffata", catChem: "Keemikaala", catConst: "Ijaarsa", catAgro: "Qonnaa Processing", catCosm: "Miidhaginaa",
+        delivCust: "Kallattii Maamilaan", delivSupp: "Dhiyeessaadhaan", delivNego: "Waliigalteen", statOrder: "Ajiajaan", statShow: "Agarsiisaratti",
+        orderDirect: "Kallattiin Ajiajadhu", codeLbl: "Koodii", statusLbl: "Haala", deliveryLbl: "Geejjiba", noDesc: "Ibsi bal'aan hin jiru.",
+        followUs: "Nu Hordofaa", shareUs: "Liinkii Qoodaa", footerCopy: "© 2026 Endalk Eyayu Design. Mirgi dhanfamaa kan eegame. Oomisha Ityoophiyaa qulqullinaan ni hojjenna."
+      }
+    };
+
+    function changeLanguage() {
+      currentLang = document.getElementById('setting-language').value;
+      const dict = i18n[currentLang];
+
+      document.getElementById('txt-utility-title').innerHTML = `<i class="fa-solid fa-pen-nib"></i> ${dict.utilityTitle}`;
+      document.getElementById('btn-chat-nav').innerHTML = `<i class="fa-brands fa-whatsapp"></i> ${dict.chatNow}`;
+      document.getElementById('btn-admin-nav').innerHTML = `<i class="fa-solid fa-user-lock"></i> ${dict.admin}`;
+      document.getElementById('txt-categories').innerText = dict.selectCategory;
+      document.getElementById('txt-settings').innerText = dict.pageSettings;
+      document.getElementById('lbl-lang').innerText = dict.language;
+      document.getElementById('lbl-theme').innerText = dict.themeColor;
+      document.getElementById('lbl-font-style').innerText = dict.fontStyle;
+      document.getElementById('lbl-font-color').innerText = dict.fontColor;
+      document.getElementById('lbl-font-size').innerText = dict.fontSize;
+
+      document.getElementById('motto-1').innerText = dict.motto1;
+      document.getElementById('motto-2').innerText = dict.motto2;
+      document.getElementById('motto-3').innerText = dict.motto3;
+
+      document.getElementById('txt-admin-title').innerHTML = `<i class="fa-solid fa-sliders"></i> ${dict.adminTitle}`;
+      document.getElementById('btn-back-home').innerHTML = `<i class="fa-solid fa-house"></i> ${dict.backToHome}`;
+      document.getElementById('btn-exit-admin').innerHTML = `<i class="fa-solid fa-right-from-bracket"></i> ${dict.exitAdmin}`;
+
+      document.getElementById('txt-sec-title').innerHTML = `<i class="fa-solid fa-user-shield"></i> ${dict.secTitle}`;
+      document.getElementById('txt-sec-desc').innerText = dict.secDesc;
+      document.getElementById('lbl-new-user').innerText = dict.newUser;
+      document.getElementById('lbl-new-pass').innerText = dict.newPass;
+      document.getElementById('btn-update-cred').innerHTML = `<i class="fa-solid fa-key"></i> ${dict.updateCred}`;
+
+      document.getElementById('txt-fb-title').innerHTML = `<i class="fa-brands fa-facebook"></i> ${dict.fbTitle}`;
+      document.getElementById('txt-fb-desc').innerText = dict.fbDesc;
+      document.getElementById('btn-publish-fb').innerHTML = `<i class="fa-brands fa-facebook"></i> ${dict.publishFb}`;
+
+      document.getElementById('txt-add-prod-title').innerHTML = `<i class="fa-solid fa-plus-circle"></i> ${dict.addProdTitle}`;
+      document.getElementById('lbl-prod-name').innerText = dict.prodName;
+      document.getElementById('lbl-prod-code').innerText = dict.prodCode;
+      document.getElementById('lbl-prod-desc').innerText = dict.prodDesc;
+      document.getElementById('lbl-prod-cat').innerText = dict.category;
+      document.getElementById('lbl-prod-price').innerText = dict.price;
+      document.getElementById('lbl-prod-deliv').innerText = dict.deliverySys;
+      document.getElementById('lbl-prod-status').innerText = dict.prodStatus;
+      document.getElementById('lbl-upload-img').innerText = dict.uploadImg;
+      document.getElementById('btn-save-prod').innerHTML = `<i class="fa-solid fa-floppy-disk"></i> ${dict.saveProd}`;
+      document.getElementById('btn-reset-form').innerText = dict.resetForm;
+
+      document.getElementById('txt-inv-title').innerHTML = `<i class="fa-solid fa-list-check"></i> ${dict.manageInv}`;
+      document.getElementById('th-img').innerText = dict.thImg;
+      document.getElementById('th-code').innerText = dict.thCode;
+      document.getElementById('th-title').innerText = dict.thTitle;
+      document.getElementById('th-cat').innerText = dict.thCat;
+      document.getElementById('th-price').innerText = dict.thPrice;
+      document.getElementById('th-deliv').innerText = dict.thDeliv;
+      document.getElementById('th-stat').innerText = dict.thStat;
+      document.getElementById('th-act').innerText = dict.thAct;
+
+      document.getElementById('txt-modal-login').innerHTML = `<i class="fa-solid fa-lock"></i> ${dict.adminAccess}`;
+      document.getElementById('lbl-login-user').innerText = dict.loginUser;
+      document.getElementById('lbl-login-pass').innerText = dict.loginPass;
+      document.getElementById('btn-login-submit').innerText = dict.loginSubmit;
+      document.getElementById('btn-login-cancel').innerText = dict.cancel;
+
+      document.getElementById('txt-follow-us').innerText = dict.followUs;
+      document.getElementById('txt-share-us').innerText = dict.shareUs;
+      document.getElementById('txt-footer-copy').innerHTML = dict.footerCopy;
+
+      document.getElementById('opt-cat-eng').innerText = dict.catEng;
+      document.getElementById('opt-cat-metal').innerText = dict.catMetal;
+      document.getElementById('opt-cat-furn').innerText = dict.catFurn;
+      document.getElementById('opt-cat-leather').innerText = dict.catLeather;
+      document.getElementById('opt-cat-garment').innerText = dict.catGarment;
+      document.getElementById('opt-cat-chem').innerText = dict.catChem;
+      document.getElementById('opt-cat-const').innerText = dict.catConst;
+      document.getElementById('opt-cat-agro').innerText = dict.catAgro;
+      document.getElementById('opt-cat-cosm').innerText = dict.catCosm;
+
+      document.getElementById('opt-deliv-cust').innerText = dict.delivCust;
+      document.getElementById('opt-deliv-supp').innerText = dict.delivSupp;
+      document.getElementById('opt-deliv-nego').innerText = dict.delivNego;
+
+      document.getElementById('opt-stat-order').innerText = dict.statOrder;
+      document.getElementById('opt-stat-show').innerText = dict.statShow;
+
+      renderCatalog();
+    }
+
+    function shareSite(platform) {
+      const pageUrl = encodeURIComponent(window.location.href);
+      const shareText = encodeURIComponent("Explore custom wood and metal craftsmanship, furniture, and engineering designs at Endalk Eyayu Design (EED):");
+      
+      let shareUrl = "";
+      if (platform === 'whatsapp') {
+        shareUrl = `https://api.whatsapp.com/send?text=${shareText}%20${pageUrl}`;
+      } else if (platform === 'telegram') {
+        shareUrl = `https://t.me/share/url?url=${pageUrl}&text=${shareText}`;
+      } else if (platform === 'facebook') {
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+      }
+      
+      if (shareUrl) {
+        window.open(shareUrl, '_blank');
+      }
+    }
+
+    function copySiteLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert('Website link copied to clipboard!');
+      }).catch(err => {
+        alert('Failed to copy link.');
+      });
+    }
+
+    function updateAdminCredentials(e) {
+      e.preventDefault();
+      const newUser = document.getElementById('admin-new-user').value.trim();
+      const newPass = document.getElementById('admin-new-pass').value.trim();
+
+      if (!newUser || !newPass) {
+        alert('Username and Password cannot be blank.');
+        return;
+      }
+
+      adminUser = newUser;
+      adminPass = newPass;
+
+      localStorage.setItem('eed_admin_user', adminUser);
+      localStorage.setItem('eed_admin_pass', adminPass);
+
+      alert('Admin Username and Password successfully updated!');
+    }
+
+    function showMainPage() {
+      document.getElementById('admin-dashboard').style.display = 'none';
+      document.getElementById('main-sidebar').style.display = 'flex';
+      document.getElementById('main-content').style.display = 'block';
+    }
+
+    function applyTheme() {
+      const bg = document.getElementById('setting-bg').value;
+      const fontStyle = document.getElementById('setting-font-style').value;
+      const fontColor = document.getElementById('setting-font-color').value;
+      const fontSize = document.getElementById('setting-font-size').value;
+
+      let bgColor = '#090d16';
+      let cardBg = '#131c2e';
+      let borderCol = '#1e293b';
+
+      if (bg === 'white') { bgColor = '#ffffff'; cardBg = '#f8fafc'; borderCol = '#e2e8f0'; }
+      else if (bg === 'light-orange') { bgColor = '#fff7ed'; cardBg = '#ffedd5'; borderCol = '#fed7aa'; }
+      else if (bg === 'garden-green') { bgColor = '#f0fdf4'; cardBg = '#dcfce7'; borderCol = '#bbf7d0'; }
+      else if (bg === 'rose') { bgColor = '#fff1f2'; cardBg = '#ffe4e6'; borderCol = '#fecdd3'; }
+
+      document.documentElement.style.setProperty('--bg-dark', bgColor);
+      document.documentElement.style.setProperty('--card-bg', cardBg);
+      document.documentElement.style.setProperty('--border-color', borderCol);
+      document.documentElement.style.setProperty('--text-main', fontColor);
+      document.documentElement.style.setProperty('--main-font-family', fontStyle);
+      document.documentElement.style.setProperty('--main-font-size', fontSize);
+    }
+
+    function openLoginModal() { document.getElementById('loginModal').style.display = 'flex'; }
+    function closeLoginModal() { document.getElementById('loginModal').style.display = 'none'; }
+
+    function validateLogin(e) {
+      e.preventDefault();
+      const enteredUser = document.getElementById('login-user').value.trim();
+      const enteredPass = document.getElementById('login-pass').value.trim();
+
+      if (enteredUser === adminUser && enteredPass === adminPass) {
+        closeLoginModal();
+        document.getElementById('main-content').style.display = 'none';
+        document.getElementById('main-sidebar').style.display = 'none';
+        document.getElementById('admin-dashboard').style.display = 'block';
+        
+        document.getElementById('admin-new-user').value = adminUser;
+        document.getElementById('admin-new-pass').value = adminPass;
+        
+        renderAdminTable();
+      } else {
+        alert('Invalid Admin Credentials!');
+      }
+    }
+
+    async function publishWebPageLinkCard() {
+      if (!confirm('Are you sure you want to publish your Web Page Link Card to your Facebook Page wall?')) {
+        return;
+      }
+
+      try {
+        const response = await fetch('post_link_card.php', { method: 'POST' });
+        const result = await response.json();
+
+        if (result.success) {
+          alert(`Success! Web page link card posted to Facebook.\nPost ID: ${result.post_id}`);
+        } else {
+          alert(`Facebook API Error: ${result.error}`);
+        }
+      } catch (err) {
+        alert('Failed to connect to post_link_card.php backend server.');
+      }
+    }
+
+    function saveProduct(e) {
+      e.preventDefault();
+      const id = document.getElementById('edit-prod-id').value;
+      const title = document.getElementById('prod-title').value;
+      const code = document.getElementById('prod-code').value;
+      const desc = document.getElementById('prod-desc').value;
+      const category = document.getElementById('prod-category').value;
+      const price = document.getElementById('prod-price').value;
+      const delivery = document.getElementById('prod-delivery').value;
+      const status = document.getElementById('prod-status').value;
+      const fileInput = document.getElementById('prod-img-file');
+
+      const processSave = (imgSrc) => {
+        if (id) {
+          const index = products.findIndex(p => p.id == id);
+          products[index] = { id, title, code, desc, category, price, delivery, status, img: imgSrc || products[index].img };
+        } else {
+          products.push({ id: Date.now(), title, code, desc, category, price, delivery, status, img: imgSrc || 'https://via.placeholder.com/300' });
+        }
+        clearAdminForm();
+        renderAdminTable();
+        renderCatalog();
+        alert('Product Saved Successfully!');
+      };
+
+      if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = (evt) => processSave(evt.target.result);
+        reader.readAsDataURL(fileInput.files[0]);
+      } else {
+        processSave(null);
+      }
+    }
+
+    function editProduct(id) {
+      const prod = products.find(p => p.id == id);
+      document.getElementById('edit-prod-id').value = prod.id;
+      document.getElementById('prod-title').value = prod.title;
+      document.getElementById('prod-code').value = prod.code || '';
+      document.getElementById('prod-desc').value = prod.desc || '';
+      document.getElementById('prod-category').value = prod.category;
+      document.getElementById('prod-price').value = prod.price;
+      document.getElementById('prod-delivery').value = prod.delivery;
+      document.getElementById('prod-status').value = prod.status;
+    }
+
+    function removeProduct(id) {
+      if (confirm('Are you sure you want to remove this product?')) {
+        products = products.filter(p => p.id != id);
+        renderAdminTable();
+        renderCatalog();
+      }
+    }
+
+    function clearAdminForm() {
+      document.getElementById('edit-prod-id').value = '';
+      document.getElementById('prod-title').value = '';
+      document.getElementById('prod-code').value = '';
+      document.getElementById('prod-desc').value = '';
+      document.getElementById('prod-price').value = '';
+      document.getElementById('prod-img-file').value = '';
+    }
+
+    function filterCategory(selectedCategory) {
+      currentFilter = selectedCategory;
+      document.getElementById('catalog-title').innerText = selectedCategory;
+      renderCatalog();
+    }
+
+    function renderCatalog() {
+      const grid = document.getElementById('product-grid');
+      grid.innerHTML = '';
+      const dict = i18n[currentLang];
+      
+      const filtered = products.filter(p => p.category === currentFilter);
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<p style="color: var(--text-muted); grid-column: 1/-1; padding: 40px 0; text-align: center;">No products found for "${currentFilter}". Select another category or add items in the Admin panel.</p>`;
+        return;
+      }
+
+      filtered.forEach(p => {
+        grid.innerHTML += `
+          <div class="product-card">
+            <div class="product-img-wrapper">
+              <span class="badge-tag">${p.category}</span>
+              <img src="${p.img}" class="product-img" alt="${p.title}">
+            </div>
+            <div class="product-details">
+              <div>
+                <div class="product-title">${p.title}</div>
+                <div class="product-code">${dict.codeLbl}: ${p.code || 'N/A'}</div>
+                <div class="product-price">${p.price}</div>
+                <p class="product-desc">${p.desc || dict.noDesc}</p>
+                <div class="product-meta">
+                  <p><span>${dict.statusLbl}:</span> <strong>${p.status}</strong></p>
+                  <p><span>${dict.deliveryLbl}:</span> <strong>${p.delivery}</strong></p>
+                </div>
+              </div>
+              <a href="https://wa.me/251934853483?text=Order%20${encodeURIComponent(p.title)}%20(Code:%20${encodeURIComponent(p.code)})" class="btn btn-whatsapp" style="width: 100%; justify-content: center;" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> ${dict.orderDirect}
+              </a>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function renderAdminTable() {
+      const tbody = document.getElementById('admin-table-body');
+      tbody.innerHTML = '';
+      products.forEach(p => {
+        tbody.innerHTML += `
+          <tr>
+            <td><img src="${p.img}" style="width:50px; height:50px; object-fit:cover; border-radius: 6px;"></td>
+            <td><strong>${p.code || 'N/A'}</strong></td>
+            <td>${p.title}</td>
+            <td>${p.category}</td>
+            <td>${p.price}</td>
+            <td>${p.delivery}</td>
+            <td>${p.status}</td>
+            <td>
+              <button class="btn btn-blue" style="padding: 6px 10px;" onclick="editProduct(${p.id})"><i class="fa-solid fa-pen"></i></button>
+              <button class="btn btn-danger" style="padding: 6px 10px;" onclick="removeProduct(${p.id})"><i class="fa-solid fa-trash"></i></button>
+            </td>
+          </tr>
+        `;
+      });
+    }
+
+    // Initial Catalog Render
+    renderCatalog();
+  </script>
+</body>
+</html>
